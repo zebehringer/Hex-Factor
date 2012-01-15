@@ -1,0 +1,114 @@
+g.tile polygon {
+	stroke-width: 12;
+	stroke: #FFFFFF;
+}
+g.tile text {
+	font-size: 36px;
+	text-anchor: middle;
+}
+g.tile.Ore text {
+	fill: white;
+}
+polygon.res_None {
+	fill: url('#background_none');
+	fill-opacity: 0.5;
+}
+polygon.res_Wood {
+	fill: url('#background_wood');
+	fill-opacity: 0.5;
+}
+polygon.res_Brick {
+	fill: url('#background_brick');
+	fill-opacity: 0.5;
+}
+polygon.res_Wheat {
+	fill: url('#background_wheat');
+	fill-opacity: 0.5;
+}
+polygon.res_Sheep {
+	fill: url('#background_sheep');
+	fill-opacity: 0.5;
+}
+polygon.res_Ore {
+	fill: url('#background_ore');
+	fill-opacity: 0.5;
+}
+g#tiles.picking a:hover g.tile polygon {
+	stroke: #FF00FF;
+}
+g#roads line {
+	stroke-width: 15px;
+	stroke: #000000;
+	stroke-opacity: 0;
+}
+g#roads.player1_picking line {
+	stroke: #FF0000;
+}
+g#roads.player2_picking line {
+	stroke: #00FF00;
+}
+g#roads.player3_picking line {
+	stroke: #0000FF;
+}
+g#roads.player4_picking line {
+	stroke: orange;
+}
+g#roads line.player1 {
+	stroke: #FF0000;
+}
+g#roads line.player2 {
+	stroke: #00FF00;
+}
+g#roads line.player3 {
+	stroke: #0000FF;
+}
+g#roads line.player4 {
+	stroke: orange;
+}
+g#roads line.possibility {
+	stroke-opacity: 0.2;
+}
+g#roads line.possibility:hover {
+	stroke-opacity: 0.6;
+}
+g#roads line.reality {
+	stroke-opacity: 1.0;
+}
+g#sites a use {
+	fill-opacity: 0;
+	stroke-width: 1px;
+	stroke: black;
+	stroke-opacity: 0;
+}
+g#sites a.vacant {
+	display: none;
+}
+g#sites.pickingType1 a.vacant, g#sites.pickingType2 a.vacant {
+	display: inline;
+}
+g#sites.pickingType1 a.vacant use.settlement, g#sites.pickingType2 a.vacant use.city {
+	
+}
+g#sites.pickingType1 a.vacant:hover use.settlement, g#sites.pickingType2 a.vacant:hover use.city {
+	fill-opacity: 0.6;
+	stroke-opacity: 0.6;
+}
+g#sites a.settlement, g#sites a.city {
+	display: inline;
+}
+g#sites a.settlement use.settlement, g#sites a.city use.city {
+	fill-opacity: 1.0;
+	stroke-opacity: 1.0;
+}
+g#sites.player1_picking, g#sites a.player1 {
+	fill: #FF0000;
+}
+g#sites.player2_picking, g#sites a.player2 {
+	fill: #00FF00;
+}
+g#sites.player3_picking, g#sites a.player3 {
+	fill: #0000FF;
+}
+g#sites.player4_picking, g#sites a.player4 {
+	fill: orange;
+}

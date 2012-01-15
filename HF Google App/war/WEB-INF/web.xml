@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<!-- TODO: Add <servlet> tags for each servlet here. -->
+	<!-- TODO: Add <servlet-mapping> tags for each <servlet> here. -->
+	<!-- TODO: Optionally add a <welcome-file-list> tag to display a welcome file. -->
+	<servlet>
+	  <servlet-name>Start</servlet-name>
+	  <servlet-class>zeb.catan.google.app.server.Start</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Start</servlet-name>
+	  <url-pattern>/Start.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>Join</servlet-name>
+	  <servlet-class>zeb.catan.google.app.server.Join</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>Join</servlet-name>
+	  <url-pattern>/Join.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>GameHostService</servlet-name>
+	  <servlet-class>
+	    zeb.catan.google.app.server.GameHostServiceImpl
+	  </servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>GameHostService</servlet-name>
+	  <url-pattern>/play/GameHostService</url-pattern>
+	  <url-pattern>/browse/GameHostService</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>BoardRenderer</servlet-name>
+	  <servlet-class>zeb.catan.google.app.server.BoardRenderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>BoardRenderer</servlet-name>
+	  <url-pattern>/play/board.svg</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	  <servlet-name>GameStateService</servlet-name>
+	  <servlet-class>
+	    zeb.catan.google.app.server.GameStateService
+	  </servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>GameStateService</servlet-name>
+	  <url-pattern>/play/GameStateService</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>

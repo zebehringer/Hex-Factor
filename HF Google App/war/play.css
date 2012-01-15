@@ -1,0 +1,7 @@
+p.sys {
+	font-style: italic;
+	color: gray;
+}
+p.sys, p.chat {
+	margin: 0px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="icon" href="favicon.ico" type="image/jpeg">
+<style type="text/css">
+body {
+	background-color: #555;
+	font-family: Calibri, Helvetica;
+	background-image: linear-gradient(top, #ccc, #aaa);
+	background-image: -moz-linear-gradient(top, #ccc, #aaa);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#ccc), to(#aaa));
+}
+div#content {
+	width: 800px;
+	margin: 0 auto;
+	padding: 10px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border: 1px solid #777;
+	background-color: #EEE;
+}
+h1 {
+	width: 100%;
+	text-align: center;
+}
+div.centered {
+	width: 100%;
+	text-align: center;
+}
+a.playNow {
+	display: inline-block;
+	padding: 10px;
+	background-color: green;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 150%;
+}
+</style>
+</head>
+
+<body>
+<div id="content">
+<h1>Welcome to Hex Factor!</h1>
+
+<div class="centered"><a class="playNow" href="Start.html">Play Now!</a><br><small>Google Account or OpenID account required*</small></div>
+
+<h2>Site Under Construction (insert animated gif here) with a long way to go</h2>
+<p>This is a work in progress. Best played with <a href="http://www.google.com/chrome">Chrome</a>.</p>
+
+<h2>Overview</h2>
+<p>This is for educational/research purposes only</p>
+<p>Hex Factor is based on the Settlers of Catan, a turn-based board game I really play too much. Each player strives to be the first to gain 10 points. Points are based on the number of settlements (1x), cities (2x), if you have the largest army [of 3 or more knights] (+2), and if you have the longest road [of 5 or more segments] (+2). Points are gained through the building of roads, settlements and cities using resource cards that are gained when the die roll matches the number of the tile which a player has an existing adjacent settlement or city. Development cards can also be purchased with a combination of resources, and can alter gameplay in a variety of ways.</p>
+
+<h2>Background</h2>
+<p>I originally started implementing the game controller with a Swing-based client, but ultimately wanted to have a rich web client. Google App Engine makes hosting the game very easy.</p>
+ 
+<h2>Goals</h2>
+<ul>
+<li>To be able to play at any time, anywhere, even if I left my ragged board at home</li>
+<li>To gather and analyze gameplay data (which hopefully translates to me winning more)</li>
+</ul>
+
+<h2>Technical Details</h2>
+<ul>
+<li>The client is written with GWT</li>
+<li>The board is rendered using SVG and CSS</li>
+<li>Web Method calls are made using GWT-RPC</li>
+<li>Game events are "pushed" to each client using Google App Engine Channels</li>
+</ul>
+
+<h2>Current Limitations and Known Issues</h2>
+<ul>
+<li>You must have a Google Account or OpenID account to play</li>
+<li>All invitees must join the game before it can start</li>
+<li>It is best if you already know how to play and what resources are required to build anything</li>
+<li>There is no robber (no 7s can be rolled)</li>
+<li>There are only 2 development card types implemented</li>
+<li>Only 50 simultaneous user channels are allowed, so no more than 12 games of 4 or 16 games of 3, or somewhere in between, will be served (so I can stay within the Google App Engine "free" price tier)</li>
+<li>Unanswered game invitations will expire after 60 minutes</li>
+<li>Inactive games will expire after 60 minutes</li>
+<li>There is no way to re-enter a game in progress, so don't close your browser</li>
+<li>Game Art is not my forte</li>
+</ul>
+
+<h2>Future Development Goals</h2>
+<p>Other than resolving the current limitations and known issues, I'd ultimately like to have the following</p>
+<ul>
+<li>Further decouple the board rendering model by having the plain board model and then transform it to SVG using an XSL template</li>
+<li>Integrate a rules engine for defining your own rules when creating a game</li>
+<li>Use Open Auth for player identification</li>
+<li>Track every turn in datastore</li>
+</ul>
+
+<div class="centered"><a class="playNow" href="Start.html">Play Now!</a><br><small>Google Account or OpenID account required*</small></div>
+
+<div><small><b>*</b>No information from your Google Account or OpenID account other than your email address and nickname is ever used by this game</small></div>
+
+</div>
+
+
+</body></html>
